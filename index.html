@@ -30,6 +30,15 @@
     .hero-trust-item { font-size: 0.82rem; color: rgba(255,255,255,0.55); display: flex; align-items: center; gap: 6px; }
     .hero-trust-item .check { color: #10b981; }
 
+    /* BENEFIT STRIP */
+    .benefit-strip { background: #fff; border-bottom: 1px solid #e2e8f0; }
+    .benefit-strip-inner { max-width: 1100px; margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: repeat(4, 1fr); }
+    .benefit-item { display: flex; align-items: center; gap: 14px; padding: 22px 20px; border-right: 1px solid #e2e8f0; }
+    .benefit-item:last-child { border-right: none; }
+    .benefit-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .benefit-text strong { display: block; font-size: 0.875rem; font-weight: 700; color: #0f172a; margin-bottom: 2px; }
+    .benefit-text span { font-size: 0.78rem; color: #64748b; }
+
     /* SECTIONS */
     section { padding: 72px 24px; }
     .section-inner { max-width: 1100px; margin: 0 auto; }
@@ -97,6 +106,15 @@
     @media (max-width: 860px) {
       .for-grid, .pricing-grid, .testimonials-grid { grid-template-columns: 1fr; }
       .nav-links { display: none; }
+      .benefit-strip-inner { grid-template-columns: repeat(2, 1fr); }
+      .benefit-item:nth-child(2) { border-right: none; }
+      .benefit-item { border-bottom: 1px solid #e2e8f0; }
+      .benefit-item:nth-child(3), .benefit-item:nth-child(4) { border-bottom: none; }
+    }
+    @media (max-width: 540px) {
+      .benefit-strip-inner { grid-template-columns: 1fr; }
+      .benefit-item { border-right: none; border-bottom: 1px solid #e2e8f0; }
+      .benefit-item:last-child { border-bottom: none; }
     }
   </style>
 </head>
@@ -129,6 +147,40 @@
     <span class="hero-trust-item"><span class="check">✓</span> Real Rockwall street address</span>
   </div>
 </section>
+
+<!-- BENEFIT STRIP -->
+<div class="benefit-strip">
+  <div class="benefit-strip-inner">
+    <div class="benefit-item">
+      <div class="benefit-icon">🔒</div>
+      <div class="benefit-text">
+        <strong>Keep your home address private</strong>
+        <span>Your personal address stays off public records</span>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">💼</div>
+      <div class="benefit-text">
+        <strong>Look more professional to clients</strong>
+        <span>A real street address, not a P.O. Box</span>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">✅</div>
+      <div class="benefit-text">
+        <strong>LLC, banking &amp; business filings</strong>
+        <span>Accepted for state filings and accounts</span>
+      </div>
+    </div>
+    <div class="benefit-item">
+      <div class="benefit-icon">📍</div>
+      <div class="benefit-text">
+        <strong>Local support in Rockwall, TX</strong>
+        <span>Real people, not a ticket queue</span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- WHO IT'S FOR -->
 <section id="who">
