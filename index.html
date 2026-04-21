@@ -66,8 +66,17 @@
     .video-label { font-size: 0.9rem; font-weight: 500; color: rgba(255,255,255,0.65); position: relative; z-index: 1; }
     .video-duration { position: absolute; bottom: 16px; right: 18px; background: rgba(0,0,0,0.5); color: rgba(255,255,255,0.8); font-size: 0.75rem; font-weight: 600; padding: 3px 9px; border-radius: 4px; z-index: 1; }
 
+    /* STEPS */
+    .steps-section { background: #fff; border-top: 1px solid #e2e8f0; }
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin-top: 48px; position: relative; }
+    .steps-grid::before { content: ''; position: absolute; top: 22px; left: calc(12.5% + 4px); right: calc(12.5% + 4px); height: 2px; background: #e2e8f0; z-index: 0; }
+    .step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+    .step-number { width: 44px; height: 44px; border-radius: 50%; background: #fff; border: 2px solid #2563eb; color: #2563eb; font-size: 0.875rem; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+    .step h3 { font-size: 0.95rem; font-weight: 700; color: #0f172a; margin-bottom: 8px; }
+    .step p { font-size: 0.82rem; color: #64748b; line-height: 1.6; }
+
     /* PRICING */
-    .pricing-bg { background: #fff; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
+    .pricing-bg { background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
     .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
     .pricing-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px; }
     .pricing-card.featured { background: #1e3a5f; border-color: transparent; }
@@ -121,11 +130,14 @@
       .benefit-item:nth-child(2) { border-right: none; }
       .benefit-item { border-bottom: 1px solid #e2e8f0; }
       .benefit-item:nth-child(3), .benefit-item:nth-child(4) { border-bottom: none; }
+      .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 36px; }
+      .steps-grid::before { display: none; }
     }
     @media (max-width: 540px) {
       .benefit-strip-inner { grid-template-columns: 1fr; }
       .benefit-item { border-right: none; border-bottom: 1px solid #e2e8f0; }
       .benefit-item:last-child { border-bottom: none; }
+      .steps-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -245,6 +257,37 @@
         <div class="play-btn">&#9654;</div>
         <div class="video-label">Your Biz Address — quick overview</div>
         <div class="video-duration">1:00</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT HAPPENS AFTER SIGNUP -->
+<section class="steps-section" id="after-signup">
+  <div class="section-inner">
+    <div class="section-label text-center">After You Sign Up</div>
+    <h2 class="section-headline text-center">What happens after you sign up</h2>
+    <p class="section-sub centered">Four simple steps stand between you and a professional Rockwall business address. Most customers are fully set up in under 15 minutes.</p>
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Choose your plan</h3>
+        <p>Pick the plan that fits your needs. Complete checkout securely in under two minutes.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>Complete your USPS authorization</h3>
+        <p>We'll walk you through the simple USPS Form 1583 required to receive mail on your behalf. We make it easy.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Get setup confirmation and support</h3>
+        <p>You'll receive a confirmation email with your address and direct access to our local support team if you have questions.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h3>Start using your new business address</h3>
+        <p>Add it to your website, business cards, Google listing, LLC filings, and anywhere else your business appears.</p>
       </div>
     </div>
   </div>
