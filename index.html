@@ -77,9 +77,13 @@
 
     /* PRICING */
     .pricing-bg { background: #f8fafc; border-top: 1px solid #e2e8f0; border-bottom: 1px solid #e2e8f0; }
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 44px; }
+    .pricing-support { display: flex; gap: 28px; justify-content: center; flex-wrap: wrap; margin-top: 16px; }
+    .pricing-support-item { font-size: 0.82rem; color: #64748b; display: flex; align-items: center; gap: 7px; }
+    .pricing-support-item .dot { width: 6px; height: 6px; border-radius: 50%; background: #10b981; flex-shrink: 0; }
+    .featured-badge { display: inline-block; background: #f59e0b; color: #0f172a; font-size: 0.7rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; margin-bottom: 14px; }
+    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 36px; }
     .pricing-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 28px; }
-    .pricing-card.featured { background: #1e3a5f; border-color: transparent; }
+    .pricing-card.featured { background: #1e3a5f; border-color: transparent; box-shadow: 0 8px 32px rgba(15,23,42,0.14); }
     .plan-name { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #64748b; margin-bottom: 8px; }
     .pricing-card.featured .plan-name { color: rgba(255,255,255,0.5); }
     .plan-price { display: flex; align-items: baseline; gap: 3px; margin-bottom: 8px; }
@@ -95,8 +99,10 @@
     .plan-features li { font-size: 0.85rem; color: #334155; display: flex; gap: 8px; }
     .pricing-card.featured .plan-features li { color: rgba(255,255,255,0.85); }
     .plan-features li::before { content: '✓'; color: #10b981; font-weight: 700; flex-shrink: 0; }
-    .plan-btn { display: block; text-align: center; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 0.875rem; text-decoration: none; border: 2px solid #e2e8f0; color: #0f172a; }
+    .plan-btn { display: block; text-align: center; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 0.875rem; text-decoration: none; border: 2px solid #e2e8f0; color: #0f172a; transition: all 0.15s; }
+    .plan-btn:hover { border-color: #2563eb; color: #2563eb; }
     .plan-btn.featured-btn { background: #f59e0b; border-color: transparent; color: #0f172a; }
+    .plan-btn.featured-btn:hover { background: #fbbf24; }
 
     /* TESTIMONIALS */
     .testimonials-bg { background: #f8fafc; border-top: 1px solid #e2e8f0; }
@@ -149,7 +155,7 @@
     <a href="#" class="nav-logo">Your Biz Address</a>
     <ul class="nav-links">
       <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#who">Who It's For</a></li>
+      <li><a href="#who">Who It’s For</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
     <a href="#pricing" class="nav-btn">Get Your Address Now</a>
@@ -208,7 +214,7 @@
 <!-- WHO IT'S FOR -->
 <section id="who">
   <div class="section-inner">
-    <div class="section-label">Who It's For</div>
+    <div class="section-label">Who It’s For</div>
     <h2 class="section-headline">Built for Rockwall Small Business Owners</h2>
     <p class="section-sub">Whether you run your business from home or on the go, a professional address makes you look more credible from day one.</p>
     <div class="for-grid">
@@ -230,7 +236,7 @@
       <div class="for-card">
         <div class="for-card-icon">💼</div>
         <h3>Freelancers &amp; Creatives</h3>
-        <p>Send invoices with a business address that signals you're serious about what you do.</p>
+        <p>Send invoices with a business address that signals you’re serious about what you do.</p>
       </div>
       <div class="for-card">
         <div class="for-card-icon">🛒</div>
@@ -277,12 +283,12 @@
       <div class="step">
         <div class="step-number">2</div>
         <h3>Complete your USPS authorization</h3>
-        <p>We'll walk you through the simple USPS Form 1583 required to receive mail on your behalf. We make it easy.</p>
+        <p>We’ll walk you through the simple USPS Form 1583 required to receive mail on your behalf. We make it easy.</p>
       </div>
       <div class="step">
         <div class="step-number">3</div>
         <h3>Get setup confirmation and support</h3>
-        <p>You'll receive a confirmation email with your address and direct access to our local support team if you have questions.</p>
+        <p>You’ll receive a confirmation email with your address and direct access to our local support team if you have questions.</p>
       </div>
       <div class="step">
         <div class="step-number">4</div>
@@ -299,6 +305,10 @@
     <div class="section-label text-center">Pricing</div>
     <h2 class="section-headline text-center">Simple, Honest Pricing</h2>
     <p class="section-sub centered">No setup fees. No hidden charges. Cancel anytime.</p>
+    <div class="pricing-support">
+      <span class="pricing-support-item"><span class="dot"></span> Most customers choose the Professional plan</span>
+      <span class="pricing-support-item"><span class="dot"></span> Setup takes less than 10 minutes</span>
+    </div>
     <div class="pricing-grid">
       <div class="pricing-card">
         <div class="plan-name">Starter</div>
@@ -311,21 +321,22 @@
           <li>Up to 10 pieces/month</li>
           <li>Online account portal</li>
         </ul>
-        <a href="#" class="plan-btn">Get Started</a>
+        <a href="#" class="plan-btn">Choose Starter</a>
       </div>
       <div class="pricing-card featured">
+        <div class="featured-badge">Most Popular</div>
         <div class="plan-name">Professional</div>
         <div class="plan-price"><span class="dollar">$</span><span class="amount">49</span><span class="period">/mo</span></div>
         <p class="plan-desc">Mail scanning, forwarding, and full remote management.</p>
         <ul class="plan-features">
           <li>Everything in Starter</li>
           <li>Mail scanning &amp; digital delivery</li>
-          <li>Mail forwarding (2×/month)</li>
+          <li>Mail forwarding (2&times;/month)</li>
           <li>Up to 30 pieces/month</li>
           <li>Package receipt &amp; notification</li>
           <li>Priority support</li>
         </ul>
-        <a href="#" class="plan-btn featured-btn">Get Started</a>
+        <a href="#" class="plan-btn featured-btn">Get Your Address Now</a>
       </div>
       <div class="pricing-card">
         <div class="plan-name">Business</div>
@@ -339,7 +350,7 @@
           <li>Check deposit services</li>
           <li>Dedicated account manager</li>
         </ul>
-        <a href="#" class="plan-btn">Get Started</a>
+        <a href="#" class="plan-btn">Choose Business</a>
       </div>
     </div>
   </div>
@@ -381,7 +392,7 @@
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-q">Is this a real street address or a P.O. Box?</div>
-        <div class="faq-a">It's a real Rockwall, TX street address — not a P.O. Box. You can use it for business cards, your website, Google Business Profile, LLC filings, and bank accounts.</div>
+        <div class="faq-a">It’s a real Rockwall, TX street address — not a P.O. Box. You can use it for business cards, your website, Google Business Profile, LLC filings, and bank accounts.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Can I use this for my LLC or business registration?</div>
@@ -393,7 +404,7 @@
       </div>
       <div class="faq-item">
         <div class="faq-q">Can I receive packages?</div>
-        <div class="faq-a">Yes. We accept packages from UPS, FedEx, USPS, and Amazon. You'll be notified on arrival and can arrange pickup or forwarding.</div>
+        <div class="faq-a">Yes. We accept packages from UPS, FedEx, USPS, and Amazon. You’ll be notified on arrival and can arrange pickup or forwarding.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q">Is there a contract or minimum commitment?</div>
@@ -401,7 +412,7 @@
       </div>
       <div class="faq-item">
         <div class="faq-q">How long does setup take?</div>
-        <div class="faq-a">Your address is activated immediately after checkout — typically under 5 minutes. You'll receive a confirmation email with your address and account details.</div>
+        <div class="faq-a">Your address is activated immediately after checkout — typically under 5 minutes. You’ll receive a confirmation email with your address and account details.</div>
       </div>
     </div>
   </div>
